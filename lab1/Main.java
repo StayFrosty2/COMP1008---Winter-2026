@@ -29,8 +29,13 @@ public class Main {
         */
 
         String weatherCondition;
-        String precipitation;
-        String windSpeed;
+
+        // It makes more sense to have this as an integer since it's a precentage value, and it makes the code later easier
+        int precipitation;
+
+        // It also makes more sense to have this as an integer since it's a numerical speed.
+        double windSpeed;
+
         int highTemp;
         int lowTemp;
         int uvIndex;
@@ -49,11 +54,13 @@ public class Main {
         System.out.println("Please input the forecast for today:");
         weatherCondition = input.nextLine();
 
-        System.out.println("Please input the chance for precipitation (Note: you don't need to enter the % symbol):");
-        precipitation = input.nextLine();
+        System.out.println("Please input the chance for precipitation (as an integer, do not include the % symbol or decimal):");
+        userInput = input.nextLine();
+        precipitation = Integer.valueOf(userInput);
 
-        System.out.println("Please input the Wind Speed:");
-        windSpeed = input.nextLine();
+        System.out.println("Please input the Wind Speed (as a valid positive number, can have decimal places, in kilometers per hour):");
+        userInput = input.nextLine();
+        windSpeed = Double.valueOf(userInput);
 
         System.out.println("Please enter the highest temperature for the day (as an integer, no decimal):");
         userInput = input.nextLine();
@@ -67,8 +74,25 @@ public class Main {
         userInput = input.nextLine();
         uvIndex = Integer.valueOf(userInput);
 
-
-        // TODO: Use loops to validate high/low temperatures and UV index
+        // Validation
+        if(precipitation > 100 || precipitation < 0)
+        {
+            while(precipitation > 100 || precipitation < 0)
+            {
+                System.out.println("Error: Precipitation not a proper percentage, please input an integer between 0 and 100:");
+                userInput = input.nextLine();
+                precipitation = Integer.valueOf(userInput);
+            }
+        }
+        if(windSpeed > 100 || windSpeed < 0)
+        {
+            while(windSpeed > 100 || windSpeed < 0)
+            {
+                System.out.println("Error: Wind Speed must be between 0 and 100, please re-enter wind speed:");
+                userInput = input.nextLine();
+                windSpeed = Double.valueOf(userInput);
+            }
+        }
         if(highTemp < -40)
         {
             while(highTemp < -40)
@@ -115,19 +139,30 @@ public class Main {
           - If wind speed > 40 km/h, suggest "Windy conditions"
         */
 
-
+        // If the weather is sunny, display this message:
         if(weatherCondition.equalsIgnoreCase("Sunny"))
         {
             System.out.println("It's a beautiful day outside!");
         }
- 
- 
+
+        // If there is high precipitation chance, tell the user to bring a raincoat
+        if(precipitation > 50)
+        {
+            System.out.println("The chance of precipitation is " + precipitation + "%, you should probably bring a raincoat or umbrella with you.");
+        }
+        
+        // If the wind speed is moderate, and it's not stormy, tell the user it's a good day to fly a kite
+        if(windSpeed >= 13 && windSpeed <= 29 && weatherCondition.equalsIgnoreCase("Stormy"))
+        {
+            System.out.println("It's a great day to fly a kite!");
+        }
         /*
         STEP 5: Create a fullReport String
         - Combine all user inputs and tips into one formatted sentence or paragraph
         - Use String concatenation (+) or String.format()
         */
- 
+
+        String fullReport;
  
         // TODO: Construct your full weather report here
  
