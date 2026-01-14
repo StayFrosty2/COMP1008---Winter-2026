@@ -27,10 +27,19 @@ public class Main {
         e) Daily low temperature (int or double)
         f) UV index (int)
         */
- 
- 
-        // TODO: Declare your variables here
- 
+
+        String weatherCondition;
+        String precipitation;
+        String windSpeed;
+        int highTemp;
+        int lowTemp;
+        int uvIndex;
+
+        // Additional Variable used to Verify inputs later
+        boolean isValid;
+
+        // Additional Variable to catch User's Input
+        String userInput;
  
         /*
         STEP 2: Get input from the user using Scanner
@@ -39,8 +48,29 @@ public class Main {
         - Example: Ensure highTemp >= lowTemp
         */
  
- 
-        // TODO: Prompt user and read input
+        System.out.println("\n ---Today's Weather---");
+        System.out.println("Please input the forecast for today:");
+        weatherCondition = input.nextLine();
+
+        System.out.println("Please input the chance for precipitation (Note: you don't need to enter the % symbol):");
+        precipitation = input.nextLine();
+
+        System.out.println("Please input the Wind Speed:");
+        windSpeed = input.nextLine();
+
+        System.out.println("Please enter the highest temperature for the day (as an integer, no decimal):");
+        userInput = input.nextLine();
+        highTemp = Integer.valueOf(userInput);
+
+        System.out.println("Please enter the lowest temperature for the day (as an integer, no decimal):");
+        userInput = input.nextLine();
+        lowTemp = Integer.valueOf(userInput);
+
+        System.out.println("Please enter the UV Index (as an integer, no decimal):");
+        userInput = input.nextLine();
+        uvIndex = Integer.valueOf(userInput);
+
+
         // TODO: Use loops to validate high/low temperatures and UV index
  
  
