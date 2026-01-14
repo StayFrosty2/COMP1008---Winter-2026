@@ -162,10 +162,7 @@ public class Main {
         - Use String concatenation (+) or String.format()
         */
 
-        String fullReport;
- 
-        // TODO: Construct your full weather report here
- 
+        String fullReport = "Today's Weather:\n" + weatherCondition + ", with a " + precipitation + "% chance of rain.\n Wind Speeds will be around " + windSpeed + "km/h.\n Temperatures will be between " + highTemp + " and " + lowTemp;
  
         /*
         STEP 6: Print the full weather report
