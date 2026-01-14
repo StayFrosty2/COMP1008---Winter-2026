@@ -35,9 +35,6 @@ public class Main {
         int lowTemp;
         int uvIndex;
 
-        // Additional Variable used to Verify inputs later
-        boolean isValid;
-
         // Additional Variable to catch User's Input
         String userInput;
  
@@ -72,15 +69,42 @@ public class Main {
 
 
         // TODO: Use loops to validate high/low temperatures and UV index
+        if(highTemp < -40)
+        {
+            while(highTemp < -40)
+            {
+                System.out.println("Error: High Temperature below System Limit, please re-enter Highest Temp (cannot go below -40):");
+                userInput = input.nextLine();
+                highTemp = Integer.valueOf(userInput);
+            }
+        }
+        if(lowTemp > 40)
+        {
+            while(lowTemp < 40)
+            {
+                System.out.println("Error: Low Temperature above System Limit, please re-enter Lowest Temp (cannot go above 40):");
+                userInput = input.nextLine();
+                lowTemp = Integer.valueOf(userInput);
+            }
+        }
+        if(uvIndex > 10 || uvIndex < 0)
+        {
+            while(uvIndex > 10 || uvIndex < 0)
+            {
+                System.out.println("Error: UV Index must be a number between 0 and 10. Please re-enter UV Index:");
+                userInput = input.nextLine();
+                lowTemp = Integer.valueOf(userInput);
+            }
+        }
  
  
         /*
         STEP 3: Typecasting (if needed)
         - Example: if you read a double but want to display as int
         */
- 
- 
-        // TODO: Apply typecasting where necessary
+        
+
+        // Type Casting not required/already completed. Skipping to next step.
  
  
         /*
@@ -90,9 +114,12 @@ public class Main {
           - If precipitation >= 50%, suggest "Carry an umbrella"
           - If wind speed > 40 km/h, suggest "Windy conditions"
         */
- 
- 
-        // TODO: Write if, if-else, or nested if statements to display tips
+
+
+        if(weatherCondition.equalsIgnoreCase("Sunny"))
+        {
+            System.out.println("It's a beautiful day outside!");
+        }
  
  
         /*
