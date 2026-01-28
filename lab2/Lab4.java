@@ -14,14 +14,15 @@ public class Lab4 {
         // ================================================
         String[] groceries = {
             // TODO: Fill in your grocery items
+            "Milk", "Eggs", "Bread", "Apples", "Pears", "Pasta", "Tomato Sauce", "Rice", "Cereal"
         };
  
  
         // ================================================
         // STEP 2: Print the array using Arrays.toString()
         // ================================================
-       
- 
+        
+        System.out.println(groceries.toString());
  
         // ================================================
         // STEP 3: Transfer all array items into an ArrayList
@@ -31,7 +32,9 @@ public class Lab4 {
  
         // TODO: Loop through the array and add items to groceryList
         
- 
+        for(String item : groceries) {
+            groceryList.add(item);
+        }
  
         // ================================================
         // STEP 4: Modify the ArrayList
@@ -40,8 +43,14 @@ public class Lab4 {
         // Print the updated ArrayList
         // ================================================
         
- 
- 
+        groceryList.add("Paper Plates");
+        groceryList.add("Paper Cups");
+
+        groceryList.remove("Pears");
+
+        for(String item : groceryList) {
+            System.out.println(item);
+        }
  
         // ================================================
         // STEP 5: Count how many items start with a vowel
@@ -49,12 +58,36 @@ public class Lab4 {
         // Use .toLowerCase(). startsWith()
         // ================================================
         
- 
+        int startsWithVowel = 0;
+
+        for(String item : groceryList) {
+            if((item.toLowerCase()).startsWith("a")) {
+                startsWithVowel += 1;
+            }
+            else if((item.toLowerCase()).startsWith("e")) {
+                startsWithVowel += 1;
+            }
+            else if((item.toLowerCase()).startsWith("i")) {
+                startsWithVowel += 1;
+            }
+            else if((item.toLowerCase()).startsWith("o")) {
+                startsWithVowel += 1;
+            }
+            else if((item.toLowerCase()).startsWith("u")) {
+                startsWithVowel += 1;
+            }
+            else if((item.toLowerCase()).startsWith("y")) {
+                startsWithVowel += 1;
+            }
+            else {
+                // do nothing
+            }
+        }
  
         // ================================================
         // STEP 6: Print the final results
         // ================================================
-        
+        System.out.println("The amount of grocery items that start with a vowel (including y) is: " + startsWithVowel);
  
     }
 }
