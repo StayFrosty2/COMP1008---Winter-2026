@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
  
-public class Lab4 {
+public class Lab2 {
     public static void main(String[] args) {
  
         // Lab 4 – COMP1008 Programming Fundamentals
