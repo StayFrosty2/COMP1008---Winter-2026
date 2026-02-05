@@ -33,11 +33,11 @@ public class CommissionEmployee extends Employee {
 
     // Override toString with a formatted string
     @Override
-    public String toString() {
-        return String.format("%s%n%s: $%,.2f; %s: %.2f",
-            "Commission Employee: " + super.toString(),
-            "Gross Sales" + getGrossSales(),
-            "Commission Rate" + getCommissionRate()
-        );
-    }
+        public String toString() {
+            return String.format("%s%n%s: $%,.2f; %s: %.2f",
+                "Commission employee: " + super.toString(),
+                "Gross sales", getGrossSales(),
+                "Commission rate", getCommissionRate()
+            );
+        }
 }

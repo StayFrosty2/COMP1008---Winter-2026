@@ -36,11 +36,13 @@ public class PayrollTest {
         System.out.println("Creating employee profile, please wait:");
         CommissionEmployee newEmployee = new CommissionEmployee(firstName, lastName, ssn, sales, rate);
  
-        
+
         // Display employee details
         System.out.println(newEmployee.toString());
 
         // Display employee earnings
         System.out.println("Overall Earnings: " + newEmployee.earnings());
+
+        keyedInput.close();
     }
 }
