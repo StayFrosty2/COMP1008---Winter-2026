@@ -13,7 +13,7 @@ public abstract class Employee {
     
     public String getFirstName() { return firstName; }
     public String getLastName() { return lastName; }
-    public String getSIN() { return socialSecurityNumber; }
+    public String getSSN() { return socialSecurityNumber; }
 
 
     public abstract double earnings();
@@ -22,7 +22,7 @@ public abstract class Employee {
     @Override
     public String toString() {
         return String.format("%s %s%nSocial Security Number: %s",
-            getFirstName(), getLastName(), getLastName()
+            getFirstName(), getLastName(), getSSN()
         );
     }
 }
