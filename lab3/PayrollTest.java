@@ -35,8 +35,9 @@ public class PayrollTest {
         System.out.println("Creating employee profile, please wait:");
         CommissionEmployee newEmployee = new CommissionEmployee(firstName, lastName, ssn, sales, rate);
  
-        // TODO 10: Display employee details
- 
+        // Display employee details
+        System.out.println(newEmployee.toString());
+
         // TODO 11: Display earnings
     }
 }
