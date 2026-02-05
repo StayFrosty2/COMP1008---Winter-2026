@@ -18,6 +18,18 @@ public class PayrollTest {
         
         System.out.println("Commission Employee Registration:\nPlease enter your first name:");
         firstName = keyedInput.nextLine();
+
+        System.out.println("Please enter your last name:");
+        lastName = keyedInput.nextLine();
+
+        System.out.println("Please enter your Social Security Number (SSN):");
+        ssn = keyedInput.nextLine();
+
+        System.out.println("Please enter your Gross Sales (as a decimal number):");
+        sales = keyedInput.nextDouble();
+
+        System.out.println("Please enter your commission rate:");
+        rate = keyedInput.nextDouble();
  
         // TODO 10: Display employee details
  
