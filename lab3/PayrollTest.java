@@ -16,6 +16,7 @@ public class PayrollTest {
         double sales;
         double rate;
         
+        // Prompt user to enter in their employee details
         System.out.println("Commission Employee Registration:\nPlease enter your first name:");
         firstName = keyedInput.nextLine();
 
@@ -35,6 +36,7 @@ public class PayrollTest {
         System.out.println("Creating employee profile, please wait:");
         CommissionEmployee newEmployee = new CommissionEmployee(firstName, lastName, ssn, sales, rate);
  
+        
         // Display employee details
         System.out.println(newEmployee.toString());
 
