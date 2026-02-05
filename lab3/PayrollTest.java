@@ -1,9 +1,14 @@
 // Cameron Yon-Vachon
+import java.util.Scanner;
+
 public class PayrollTest {
  
     public static void main(String[] args) {
  
-        // TODO 9: Create a CommissionEmployee object
+        
+        // Create a new Scanner
+        Scanner keyedInput = new Scanner(System.in);
+        
  
         // TODO 10: Display employee details
  
