@@ -15,8 +15,14 @@ public abstract class Employee {
     public String getLastName() { return lastName; }
     public String getSIN() { return socialSecurityNumber; }
 
-    
+
     public abstract double earnings();
  
-    // TODO 4: Override toString()
+
+    @Override
+    public String toString() {
+        return String.format("%s %s%nSocial Security Number: %s",
+            getFirstName(), getLastName(), getLastName()
+        );
+    }
 }
