@@ -38,6 +38,7 @@ public class PayrollTest {
         // Display employee details
         System.out.println(newEmployee.toString());
 
-        // TODO 11: Display earnings
+        // Display employee earnings
+        System.out.println("Overall Earnings: " + newEmployee.earnings());
     }
 }
