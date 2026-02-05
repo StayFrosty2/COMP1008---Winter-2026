@@ -23,7 +23,13 @@ public class CommissionEmployee extends Employee {
     // Methods to get variables
     public double getGrossSales() { return grossSales; }
     public double getCommissionRate() { return commissionRate; }
-    // TODO 7: Override earnings()
+
+    // Override earnings with method to set earnings
+    @Override
+    public double earnings() {
+        return getGrossSales() * getCommissionRate();
+    }
  
+    
     // TODO 8: Override toString()
 }
