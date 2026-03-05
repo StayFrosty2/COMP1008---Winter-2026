@@ -134,13 +134,27 @@ public class StudentValidatorLab {
                 }
             }
         }
-        System.out.println("Amount of vowels: ");
+        System.out.println("Amount of vowels: " + count);
 
         // STEP 9:
         // Reverse sentence using StringBuilder
 
+        String[] userSentence = userInput.split("\\s+");
+        StringBuilder reversedSentence = new StringBuilder();
+
+        for (String word : userSentence) {
+            reversedSentence.append(word);
+        }
+
+        reversedSentence.reverse();
+
+        System.out.println("Your sentence, but reversed:\n" + reversedSentence);
+
         // STEP 10:
         // Replace all digits in sentence with '*'
+
+        userInput.replaceAll("\\d", "*");
+        System.out.println("Your sentence, digits removed:\n" + userInput);
 
         // =====================================================
         // PART 5 — TOKENIZING
@@ -148,7 +162,11 @@ public class StudentValidatorLab {
 
         // STEP 11:
         // Create string: "Math,Science,Java,English"
+        String courses = "Math,Science,Java,English";
+
         // Split using comma
+
+        
         // Print each course
 
         // =====================================================
