@@ -15,10 +15,10 @@ public class StudentValidatorLab {
         boolean isValid = false;
 
         while (!isValid) {
+
             // STEP 1:
             // Ask user to enter full name
             System.out.println("Please enter your first and last name:");
-
             userInput = scanner.nextLine();
 
             // STEP 2:
@@ -33,26 +33,26 @@ public class StudentValidatorLab {
                 System.out.println("Name is invalid.");
             }
         }
+
         // =====================================================
         // PART 2 — STUDENT ID VALIDATION
         // Format: S-1234
         // =====================================================
-
-        // STEP 3:
-        // Ask user to enter student ID
-
+        
         StringBuilder stId = new StringBuilder("S-");
 
-        System.out.println("Please enter student id:");
-
-        // STEP 4:
-        // Validate format using regex
         isValid = false;
 
         while(!isValid) {
+
+            // STEP 3:
+            // Ask user to enter student ID
+            System.out.println("Please enter student id:");
             userInput = scanner.nextLine();
 
-            if (userInput.matches("^\\d{10}$")) {
+            // STEP 4:
+            // Validate format using regex
+            if (userInput.matches("^\\d{9}$")) {
                 System.out.println("Valid Student ID");
                 isValid = true;
             }
@@ -67,11 +67,25 @@ public class StudentValidatorLab {
         // PART 3 — EMAIL VALIDATION
         // =====================================================
 
-        // STEP 5:
-        // Ask user to enter email
+        isValid = false;
 
-        // STEP 6:
-        // Validate email format
+        while(!isValid) {
+
+            // STEP 5:
+            // Ask user to enter email
+            System.out.println("Please enter your student email:");
+            userInput = scanner.nextLine();
+
+            // STEP 6:
+            // Validate email format
+            if(userInput.matches("^[A-Za-z0-9+.-]+@[A-Za-z0-9+.-]+$")) {
+                System.out.println("Valid email");
+                isValid = true;
+            }
+            else {
+                System.out.println("Invalid Email Format");
+            }
+        }
 
         // =====================================================
         // PART 4 — SENTENCE PROCESSING
