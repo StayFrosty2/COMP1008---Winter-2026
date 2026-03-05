@@ -128,6 +128,10 @@ public class StudentValidatorLab {
 
         for(int i = 0; i < userInput.length(); i++) {
 
+            /*
+                There was no way to check for vowels using Character Class. I used the Letter class and a custom function
+                to check if what the user entered was a vowel.
+            */
             if(Character.isLetter(userInput.charAt(i))) {
                 if(isVowel(userInput.charAt(i))) {
                     count = count + 1;
@@ -165,9 +169,12 @@ public class StudentValidatorLab {
         String courses = "Math,Science,Java,English";
 
         // Split using comma
+        String[] tokens = courses.split(",");
 
-        
         // Print each course
+        for(String course : tokens) {
+            System.out.println(course);
+        }
 
         // =====================================================
         // PART 6 — PATTERN & MATCHER
