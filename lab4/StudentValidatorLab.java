@@ -11,7 +11,7 @@ public class StudentValidatorLab {
         // PART 1 — NAME VALIDATION (String + Regex)
         // =====================================================
 
-        String userInput;
+        String userInput = "";
         boolean isValid = false;
 
         while (!isValid) {
@@ -41,10 +41,27 @@ public class StudentValidatorLab {
         // STEP 3:
         // Ask user to enter student ID
 
+        StringBuilder stId = new StringBuilder("S-");
 
+        System.out.println("Please enter student id:");
 
         // STEP 4:
         // Validate format using regex
+        isValid = false;
+
+        while(!isValid) {
+            userInput = scanner.nextLine();
+
+            if (userInput.matches("^\\d{10}$")) {
+                System.out.println("Valid Student ID");
+                isValid = true;
+            }
+            else {
+                System.out.println("Invalid Student ID format");
+            }
+        }
+
+        stId.append(userInput);
 
         // =====================================================
         // PART 3 — EMAIL VALIDATION
