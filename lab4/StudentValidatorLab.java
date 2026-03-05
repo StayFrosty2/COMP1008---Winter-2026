@@ -157,8 +157,9 @@ public class StudentValidatorLab {
         // STEP 10:
         // Replace all digits in sentence with '*'
 
-        userInput.replaceAll("\\d", "*");
-        System.out.println("Your sentence, digits removed:\n" + userInput);
+        String replace = userInput;
+        String replaced = replace.replaceAll("\\d", "*");
+        System.out.println("Your sentence, digits removed:\n" + replaced);
 
         // =====================================================
         // PART 5 — TOKENIZING
@@ -171,6 +172,7 @@ public class StudentValidatorLab {
         // Split using comma
         String[] tokens = courses.split(",");
 
+        System.out.println("Courses:");
         // Print each course
         for(String course : tokens) {
             System.out.println(course);
@@ -184,9 +186,12 @@ public class StudentValidatorLab {
         // Create string: "Invoice number is 4567 and total is 890"
         String invoiceNote = "Invoice number is 4567 and total is 890";
         // Use Pattern and Matcher to extract all numbers
-        Pattern numberPattern = Pattern.compile("\\d+\\d+");
+        Pattern numberPattern = Pattern.compile("\\d+");
         Matcher matcher = numberPattern.matcher(invoiceNote);
-        System.out.println("Found numbers: " + matcher.group());
+
+        while(matcher.find()) {
+            System.out.println("Found number: " + matcher.group());
+        }
 
         scanner.close();
     }
