@@ -3,6 +3,30 @@ import java.util.regex.*;
 
 public class StudentValidatorLab {
 
+    // Checks if the character the user inputed was a vowel
+    public static boolean isVowel(char c) {
+
+            switch (c) {
+                // If the char c is a vowel, return true
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'o':
+            case 'u':
+            case 'y':
+            case 'A':
+            case 'E':
+            case 'I':
+            case 'O':
+            case 'U':
+            case 'Y':
+                return true;
+            default:
+                // else, return false
+                return false;
+        }
+    }
+
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
@@ -38,7 +62,7 @@ public class StudentValidatorLab {
         // PART 2 — STUDENT ID VALIDATION
         // Format: S-1234
         // =====================================================
-        
+
         StringBuilder stId = new StringBuilder("S-");
 
         isValid = false;
@@ -94,8 +118,23 @@ public class StudentValidatorLab {
         // STEP 7:
         // Ask user to enter a sentence
 
+        System.out.println("Please enter a sentence of any length:");
+        userInput = scanner.nextLine();
+
         // STEP 8:
         // Count vowels using Character class
+
+        int count = 0;
+
+        for(int i = 0; i < userInput.length(); i++) {
+
+            if(Character.isLetter(userInput.charAt(i))) {
+                if(isVowel(userInput.charAt(i))) {
+                    count = count + 1;
+                }
+            }
+        }
+        System.out.println("Amount of vowels: ");
 
         // STEP 9:
         // Reverse sentence using StringBuilder
