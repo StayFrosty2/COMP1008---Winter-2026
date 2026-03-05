@@ -18,7 +18,9 @@ public class StudentValidatorLab {
  
         // STEP 1:
         // Ask user to enter full name
- 
+        System.out.println("Please enter your first and last name:");
+
+        String userInput = scanner.nextLine();
  
  
  
@@ -26,9 +28,12 @@ public class StudentValidatorLab {
         // Validate name
         // Only letters and spaces allowed
         // Use regex with matches()
- 
- 
- 
+        if(userInput.matches("^[A-Za-z]+ [A-Za-z]+$")) {
+            System.out.println("Name is valid.");
+        }
+        else {
+            System.out.println("Name is invalid.");
+        }
  
         // =====================================================
         // PART 2 — STUDENT ID VALIDATION
