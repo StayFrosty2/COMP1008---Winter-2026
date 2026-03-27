@@ -42,7 +42,7 @@ public class CalculatorApp extends Application {
         main.getChildren().addAll(firstNumberBox, secondNumberBox, buttons, resultBox);
        
         // Step 6: Event handling for buttons
-        
+
         addition.setOnAction(e -> {
             try {
                 double num1 = Double.parseDouble(firstNumberBox.getText());
@@ -50,7 +50,7 @@ public class CalculatorApp extends Application {
                 double result = num1 + num2;
                 resultBox.setText("Result: " + result);
             }
-            catch (Exception e) {
+            catch (NumberFormatException e) {
                 resultBox.setText("Error: That is not a number");
             }
         });
@@ -61,7 +61,7 @@ public class CalculatorApp extends Application {
                 double result = num1 - num2;
                 resultBox.setText("Result: " + result);
             }
-            catch (Exception e) {
+            catch (NumberFormatException e) {
                 resultBox.setText("Error: That is not a number");
             }
         });
@@ -72,7 +72,7 @@ public class CalculatorApp extends Application {
                 double result = num1 * num2;
                 resultBox.setText("Result: " + result);
             }
-            catch (Exception e) {
+            catch (NumberFormatException e) {
                 resultBox.setText("Error: That is not a number");
             }
         });
@@ -80,10 +80,15 @@ public class CalculatorApp extends Application {
             try {
                 double num1 = Double.parseDouble(firstNumberBox.getText());
                 double num2 = Double.parseDouble(secondNumberBox.getText());
-                double result = num1 / num2;
-                resultBox.setText("Result: " + result);
+                try {   
+                    double result = num1 / num2;
+                    resultBox.setText("Result: " + result);
+                }
+                catch (ArithmeticException e) {
+                    resultBox.setText("Error: Arithmatic Exception: " + e.getMessage());
+                }
             }
-            catch (Exception e) {
+            catch (NumberFormatException e) {
                 resultBox.setText("Error: That is not a number");
             }
         });
