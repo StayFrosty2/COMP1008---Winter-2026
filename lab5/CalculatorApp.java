@@ -85,7 +85,7 @@ public class CalculatorApp extends Application {
                     resultBox.setText("Result: " + result);
                 }
                 catch (ArithmeticException e) {
-                    resultBox.setText("Error, Arithmatic Exception: " + e.getMessage());
+                    resultBox.setText("Error: Division by 0");
                 }
             }
             catch (NumberFormatException e) {
