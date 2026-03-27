@@ -16,9 +16,9 @@ public class CalculatorApp extends Application {
         // Step 1: Create TextFields for input
 
         TextField firstNumberBox = new TextField();
-        firstNumber.setPromptText("Enter First Number");
+        firstNumberBox.setPromptText("Enter First Number");
         TextField secondNumberBox = new TextField();
-        secondNumber.setPromptText("Enter Second Number");
+        secondNumberBox.setPromptText("Enter Second Number");
 
         // Step 2: Create Buttons for operations
 
@@ -50,7 +50,7 @@ public class CalculatorApp extends Application {
                 double result = num1 + num2;
                 resultBox.setText("Result: " + result);
             }
-            catch (NumberFormatException e) {
+            catch (NumberFormatException err) {
                 resultBox.setText("Error: That is not a number");
             }
         });
@@ -61,7 +61,7 @@ public class CalculatorApp extends Application {
                 double result = num1 - num2;
                 resultBox.setText("Result: " + result);
             }
-            catch (NumberFormatException e) {
+            catch (NumberFormatException err) {
                 resultBox.setText("Error: That is not a number");
             }
         });
@@ -72,7 +72,7 @@ public class CalculatorApp extends Application {
                 double result = num1 * num2;
                 resultBox.setText("Result: " + result);
             }
-            catch (NumberFormatException e) {
+            catch (NumberFormatException err) {
                 resultBox.setText("Error: That is not a number");
             }
         });
@@ -80,15 +80,15 @@ public class CalculatorApp extends Application {
             try {
                 double num1 = Double.parseDouble(firstNumberBox.getText());
                 double num2 = Double.parseDouble(secondNumberBox.getText());
-                try {   
+                if (num2 == 0) {
+                    resultBox.setText("Error: Division by 0");
+                }
+                else {
                     double result = num1 / num2;
                     resultBox.setText("Result: " + result);
                 }
-                catch (ArithmeticException e) {
-                    resultBox.setText("Error: Division by 0");
-                }
             }
-            catch (NumberFormatException e) {
+            catch (NumberFormatException err) {
                 resultBox.setText("Error: That is not a number");
             }
         });
