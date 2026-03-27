@@ -42,6 +42,7 @@ public class CalculatorApp extends Application {
         main.getChildren().addAll(firstNumberBox, secondNumberBox, buttons, resultBox);
        
         // Step 6: Event handling for buttons
+        
         addition.setOnAction(e -> {
             try {
                 double num1 = Double.parseDouble(firstNumberBox.getText());
@@ -53,7 +54,40 @@ public class CalculatorApp extends Application {
                 resultBox.setText("Error: That is not a number");
             }
         });
-       
+        subtraction.setOnAction(e -> {
+            try {
+                double num1 = Double.parseDouble(firstNumberBox.getText());
+                double num2 = Double.parseDouble(secondNumberBox.getText());
+                double result = num1 - num2;
+                resultBox.setText("Result: " + result);
+            }
+            catch (Exception e) {
+                resultBox.setText("Error: That is not a number");
+            }
+        });
+        multiplication.setOnAction(e -> {
+            try {
+                double num1 = Double.parseDouble(firstNumberBox.getText());
+                double num2 = Double.parseDouble(secondNumberBox.getText());
+                double result = num1 * num2;
+                resultBox.setText("Result: " + result);
+            }
+            catch (Exception e) {
+                resultBox.setText("Error: That is not a number");
+            }
+        });
+        division.setOnAction(e -> {
+            try {
+                double num1 = Double.parseDouble(firstNumberBox.getText());
+                double num2 = Double.parseDouble(secondNumberBox.getText());
+                double result = num1 / num2;
+                resultBox.setText("Result: " + result);
+            }
+            catch (Exception e) {
+                resultBox.setText("Error: That is not a number");
+            }
+        });
+
         // Step 7: Create scene and show stage
        
     }
