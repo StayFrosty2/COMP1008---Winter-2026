@@ -15,9 +15,9 @@ public class CalculatorApp extends Application {
  
         // Step 1: Create TextFields for input
 
-        TextField firstNumber = new TextField();
+        TextField firstNumberBox = new TextField();
         firstNumber.setPromptText("Enter First Number");
-        TextField secondNumber = new TextField();
+        TextField secondNumberBox = new TextField();
         secondNumber.setPromptText("Enter Second Number");
 
         // Step 2: Create Buttons for operations
@@ -29,17 +29,30 @@ public class CalculatorApp extends Application {
 
         // Step 3: Create Label for result
 
-        Label result = new Label("Result");
+        Label resultBox = new Label("Result");
 
         // Step 4: HBox for buttons
 
-        // Also spaced the buttons by a couple pixels so they don't get clumped together
         HBox buttons = new HBox(15);
         buttons.getChildren().addAll(addition, subtraction, multiplication, division);
 
         // Step 5: VBox main layout
+
+        VBox main =  new VBox(15);
+        main.getChildren().addAll(firstNumberBox, secondNumberBox, buttons, resultBox);
        
         // Step 6: Event handling for buttons
+        addition.setOnAction(e -> {
+            try {
+                double num1 = Double.parseDouble(firstNumberBox.getText());
+                double num2 = Double.parseDouble(secondNumberBox.getText());
+                double result = num1 + num2;
+                resultBox.setText("Result: " + result);
+            }
+            catch (Exception e) {
+                resultBox.setText("Error: That is not a number");
+            }
+        });
        
         // Step 7: Create scene and show stage
        
