@@ -29,10 +29,10 @@ public class CalculatorApp extends Application {
 
         // Step 3: Create Label for result
 
-        
+        Label result = new Label("Result");
 
         // Step 4: HBox for buttons
-       
+        
         // Step 5: VBox main layout
        
         // Step 6: Event handling for buttons
