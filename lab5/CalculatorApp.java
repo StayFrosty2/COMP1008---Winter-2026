@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 public class CalculatorApp extends Application {
  
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage stage) {
  
         // Step 1: Create TextFields for input
 
@@ -85,7 +85,7 @@ public class CalculatorApp extends Application {
                     resultBox.setText("Result: " + result);
                 }
                 catch (ArithmeticException e) {
-                    resultBox.setText("Error: Arithmatic Exception: " + e.getMessage());
+                    resultBox.setText("Error, Arithmatic Exception: " + e.getMessage());
                 }
             }
             catch (NumberFormatException e) {
@@ -95,6 +95,11 @@ public class CalculatorApp extends Application {
 
         // Step 7: Create scene and show stage
        
+        Scene scene = new Scene(main, 400, 300);
+        stage.setScene(scene);
+        stage.setTitle("Calculator");
+        stage.show();
+
     }
  
     public static void main(String[] args) {
