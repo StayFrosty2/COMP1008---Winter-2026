@@ -32,7 +32,11 @@ public class CalculatorApp extends Application {
         Label result = new Label("Result");
 
         // Step 4: HBox for buttons
-        
+
+        // Also spaced the buttons by a couple pixels so they don't get clumped together
+        HBox buttons = new HBox(15);
+        buttons.getChildren().addAll(addition, subtraction, multiplication, division);
+
         // Step 5: VBox main layout
        
         // Step 6: Event handling for buttons
